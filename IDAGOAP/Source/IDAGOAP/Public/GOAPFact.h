@@ -11,7 +11,7 @@ enum class EGOAPGoalType : uint8
 };
 
 USTRUCT(BlueprintType)
-struct FGOAPFact
+struct IDAGOAP_API FGOAPFact
 {
     GENERATED_BODY()
 

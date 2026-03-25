@@ -9,13 +9,15 @@ public class IDAGOAP : ModuleRules
         PublicDependencyModuleNames.AddRange(new string[]
         {
             "Core",
+            "CoreUObject",
+            "Engine",
+            "AIModule",
+            "NavigationSystem",
             "IDAGOAPThirdParty"
         });
 
         PrivateDependencyModuleNames.AddRange(new string[]
         {
-            "CoreUObject",
-            "Engine"
         });
     }
 }

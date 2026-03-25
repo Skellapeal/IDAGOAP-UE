@@ -1,4 +1,7 @@
 #include "RidaGOAPAIController.h"
+#include "GOAPFact.h"
+#include "GOAPAgentComponent.h"
+#include "GOAPMotive.h"
 
 ARidaGOAPAIController::ARidaGOAPAIController()
 {
@@ -7,8 +10,8 @@ ARidaGOAPAIController::ARidaGOAPAIController()
 
 UGOAPAgentComponent* ARidaGOAPAIController::GetGOAPComponent() const
 {
-    if (const APawn* Pawn = GetPawn())
-        return Pawn->FindComponentByClass<UGOAPAgentComponent>();
+    if (const APawn* ControlledPawn = GetPawn())
+        return ControlledPawn->FindComponentByClass<UGOAPAgentComponent>();
     return nullptr;
 }
 
@@ -24,10 +27,10 @@ void ARidaGOAPAIController::RequestGoal(TSubclassOf<UGOAPMotive> MotiveClass, co
         switch (Fact.Type)
         {
             case EGOAPGoalType::Bool:
-                GOAP->SetWorldBool(Fact.Key, Fact.BoolValue);
+                GOAP->SetWorldBool (Fact.Key, Fact.BoolValue);
                 break;
             case EGOAPGoalType::Int:
-                GOAP->SetWorldInt(Fact.Key, Fact.IntValue);
+                GOAP->SetWorldInt  (Fact.Key, Fact.IntValue);
                 break;
             case EGOAPGoalType::Float:
                 GOAP->SetWorldFloat(Fact.Key, Fact.FloatValue);
@@ -50,11 +53,15 @@ void ARidaGOAPAIController::InjectWorldBool(const FString& Key, bool Value)
 void ARidaGOAPAIController::InjectWorldInt(const FString& Key, int32 Value)
 {
     if (UGOAPAgentComponent* GOAP = GetGOAPComponent())
+    {
         GOAP->SetWorldInt(Key, Value);
+    }
 }
 
 void ARidaGOAPAIController::InjectWorldFloat(const FString& Key, float Value)
 {
     if (UGOAPAgentComponent* GOAP = GetGOAPComponent())
+    {
         GOAP->SetWorldFloat(Key, Value);
+    }
 }

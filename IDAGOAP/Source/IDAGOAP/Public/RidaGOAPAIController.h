@@ -2,7 +2,9 @@
 
 #include "CoreMinimal.h"
 #include "AIController.h"
+#include "GOAPFact.h"
 #include "GOAPAgentComponent.h"
+#include "GOAPMotive.h"
 #include "RidaGOAPAIController.generated.h"
 
 UCLASS(Abstract, Blueprintable)
@@ -14,7 +16,7 @@ public:
     ARidaGOAPAIController();
 
     UFUNCTION(BlueprintCallable, Category = "GOAP")
-    virtual void RequestGoal(TSubclassOf<UGOAPMotive> MotiveClass, const TMap<FString, bool>& SeedFacts);
+    virtual void RequestGoal(TSubclassOf<UGOAPMotive> MotiveClass, const TArray<FGOAPFact>& SeedFacts);
 
     UFUNCTION(BlueprintCallable, Category = "GOAP|WorldState")
     void InjectWorldBool(const FString& Key, bool Value);

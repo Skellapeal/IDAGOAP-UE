@@ -15,7 +15,7 @@ enum class EGOAPAgentStatus : uint8
     Planning        UMETA(DisplayName = "Planning"),
     Executing       UMETA(DisplayName = "Executing"),
     PlanFailed      UMETA(DisplayName = "Plan Failed"),
-    GoalSatisfied   UMETA(DisplayName = "Goal Satisfied"),
+    NoMotives       UMETA(DisplayName = "No Motives"),
     Interrupted     UMETA(DisplayName = "Interrupted")
 };
 
