@@ -90,7 +90,6 @@ bool UGOAPAgentComponent::GetWorldBool(const FString& Key) const
     return Agent->get_world_state().get_bool(TCHAR_TO_UTF8(*Key)).value_or(false);
 }
 
-
 void UGOAPAgentComponent::SetWorldInt(const FString& Key, int32 Value)
 {
     if (Agent.IsValid()) Agent->get_world_state().set_int(TCHAR_TO_UTF8(*Key), Value);
@@ -154,6 +153,7 @@ EGOAPAgentStatus UGOAPAgentComponent::ConvertStatus(rida_goap::agent_status Stat
         case rida_goap::agent_status::Executing:     return EGOAPAgentStatus::Executing;
         case rida_goap::agent_status::PlanFailed:    return EGOAPAgentStatus::PlanFailed;
         case rida_goap::agent_status::Interrupted:   return EGOAPAgentStatus::Interrupted;
+        case rida_goap::agent_status::NoMotives:     return EGOAPAgentStatus::NoMotives;
         default:                                     return EGOAPAgentStatus::Idle;
     }
 }
