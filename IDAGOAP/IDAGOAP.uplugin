@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "IDAGOAP",
+	"Description": "Regressive IDA* Goal-Oriented Action Planning AI library integration for Unreal Engine 5.",
+	"Category": "AI",
+	"CreatedBy": "Neil Coleman",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "IDAGOAP",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
