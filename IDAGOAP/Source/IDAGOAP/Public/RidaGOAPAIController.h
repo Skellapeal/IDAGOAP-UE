@@ -1,13 +1,9 @@
 #pragma once
 
-#include "CoreMinimal.h"
 #include "AIController.h"
-#include "GOAPFact.h"
-#include "GOAPAgentComponent.h"
-#include "GOAPMotive.h"
 #include "RidaGOAPAIController.generated.h"
 
-UCLASS(Abstract, Blueprintable)
+UCLASS(Abstract, Blueprintable, BlueprintType)
 class IDAGOAP_API ARidaGOAPAIController : public AAIController
 {
     GENERATED_BODY()
