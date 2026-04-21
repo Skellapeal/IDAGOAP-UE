@@ -1,7 +1,7 @@
-#include <memory>
 #include "GOAPHeuristic.h"
 #include "heuristic.h"
 #include "world_state.h"
+#include <memory>
 
 class FGOAPHeuristicBridge : public rida_goap::heuristic
 {
